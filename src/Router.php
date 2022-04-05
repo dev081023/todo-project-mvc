@@ -18,7 +18,7 @@ class Router
     if (!empty($this->routes[$request_uri]) && class_exists($this->routes[$request_uri])) {
       $className = $this->routes[$request_uri];
     } else {
-      $className = \App\Controllers\NotFound::class;
+      $className = \App\Controllers\NotFoundController::class;
     }
     $controller = new $className();
 
