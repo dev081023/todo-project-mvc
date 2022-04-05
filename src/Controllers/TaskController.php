@@ -4,7 +4,7 @@
 namespace App\Controllers;
 
 
-class TodoController extends AbstractController
+class TaskController extends AbstractController
 {
 
   public function view()
