@@ -5,4 +5,5 @@ return [
   '/tasks' => \App\Controllers\TaskController::class,
   '/not-found' =>  \App\Controllers\NotFoundController::class,
   '/login' => \App\Controllers\LoginController::class,
+  '/register' => \App\Controllers\RegisterController::class,
 ];
