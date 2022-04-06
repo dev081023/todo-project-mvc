@@ -1,6 +1,7 @@
 <?php
 
 require_once '../config/init.php';
+require_once '../bootstrap.php';
 require_once '../vendor/autoload.php';
 
 use App\Router;

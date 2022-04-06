@@ -19,7 +19,7 @@
 <body>
 <div class="container">
 
-  <h1><a href="/"><?php print SITE_NAME; ?></a></h1>
+  <h1><a href="<?php print PATH; ?>"><?php print SITE_NAME; ?></a></h1>
 
   <?php print $content; ?>
 

@@ -15,7 +15,7 @@ abstract class AbstractController
     return ob_get_clean();
   }
 
-  public function viewTemplate(string $template, array $variables = []): bool|string
+  public function viewTemplate(string $template, array $data = []): bool|string
   {
     $template_file = __DIR__ . '/../Views/' . $template . '.html.php';
     if (!file_exists($template_file)) {
