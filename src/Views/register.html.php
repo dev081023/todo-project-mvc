@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-3"></div>
   <div class="col-md-offset-3 col-md-6">
-    <form class="form-horizontal" action="#" method="post">
+    <form class="form-horizontal" action="<?php print PATH; ?>/register" method="post">
       <span class="heading">REGISTRATION</span>
       <!--            <small style="color: red;"><i>--><?//= $_SESSION['error']; ?><!--</i></small> <br>-->
       <small><i>At least three Latin letters</i></small>
@@ -15,7 +15,7 @@
         <i class="fa fa-lock"></i>
       </div>
       <div class="form-group" style="margin-bottom: 60px;">
-        <span class="text"><a href="/login">Authorization</a></span>
+        <span class="text"><a href="<?php print PATH; ?>/login">Authorization</a></span>
         <button type="submit" class="btn btn-secondary">Send</button>
       </div>
     </form>
