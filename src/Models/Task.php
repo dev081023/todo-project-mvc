@@ -22,6 +22,12 @@ class Task
    */
   private ?string $text;
 
+  /**
+   * @ManyToOne(targetEntity="User")
+   * @JoinColumn(name="user_id", referencedColumnName="id")
+   */
+  private ?int $userId;
+
   public function __construct(string $text)
   {
     $this->text = $text;
@@ -41,5 +47,10 @@ class Task
   public function getText(): string
   {
     return $this->text;
+  }
+
+  public function getUserId()
+  {
+    return $this->getUserId();
   }
 }
