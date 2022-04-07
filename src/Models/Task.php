@@ -28,6 +28,11 @@ class Task
    */
   private ?int $userId;
 
+  /**
+   * @Column(type="datetime")
+   */
+  private $created;
+
   public function __construct(string $text)
   {
     $this->text = $text;
@@ -49,8 +54,13 @@ class Task
     return $this->text;
   }
 
-  public function getUserId()
+  public function getUserId(): ?int
   {
-    return $this->getUserId();
+    return $this->userId;
+  }
+
+  public function getCreated()
+  {
+    return $this->created;
   }
 }
