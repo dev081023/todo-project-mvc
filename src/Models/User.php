@@ -18,7 +18,7 @@ class User
   private ?int $id;
 
   /**
-   * @Column(name="login", type="string", length=150, nullable=false)
+   * @Column(name="login", type="string", length=150, nullable=false, unique=true)
    */
   private string $login;
 
