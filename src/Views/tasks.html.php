@@ -6,7 +6,8 @@ if (empty($_SESSION['login'])) {
   header("Location: " . PATH);
   exit();
 }
-
+//var_dump($data);
+//exit();
 ?>
 <div class="row">
 
