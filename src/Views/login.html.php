@@ -13,7 +13,7 @@
         <i class="fa fa-lock"></i>
       </div>
       <div class="form-group" style="margin-bottom: 60px;">
-        <span class="text"><a href="/register">Registration</a></span>
+        <span class="text"><a href="<?php print PATH; ?>/register">Registration</a></span>
         <button type="submit" class="btn btn-secondary">Send</button>
       </div>
     </form>
