@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+session_destroy();
+
+?>
 <div class="row">
     <div class="col-3"></div>
     <div class="col-md-offset-3 col-md-6">
