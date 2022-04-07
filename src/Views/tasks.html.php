@@ -1,6 +1,12 @@
 <?php
 /** @var $data */
 session_start();
+
+if (empty($_SESSION['login'])) {
+  header("Location: " . PATH);
+  exit();
+}
+
 ?>
 <div class="row">
 
