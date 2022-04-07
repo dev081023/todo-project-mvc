@@ -1,5 +1,6 @@
 <?php
 /** @var $data  */
+session_start();
 ?>
 <div class="row">
 
@@ -11,7 +12,7 @@
         <form name="todoform" class="todoForm" method="post" action="">
             <div class="input-group mb-3 mt-3">
                 <input type="text" class="form-control" id="task" name="text">
-                <button type="submit" class="btn btn-outline-secondary add" id="add" name="add">Add Task - <span style="color: black"><b><!--?= $_SESSION['login'] ?>--></b></span></button>
+                <button type="submit" class="btn btn-outline-secondary add" id="add" name="add">Add Task - <span style="color: black"><b><?= $_SESSION['login'] ?></b></span></button>
             </div>
         </form>
 
