@@ -1,10 +1,11 @@
 <?php
+
 /** @var $data */
 session_start();
 
 if (empty($_SESSION['login'])) {
-  header("Location: " . PATH);
-  exit();
+    header("Location: " . PATH);
+    exit();
 }
 ?>
 <div class="row">
@@ -17,33 +18,32 @@ if (empty($_SESSION['login'])) {
         <form name="todoform" class="todoForm" method="post" action="">
             <div class="input-group mb-3 mt-3">
                 <input type="text" class="form-control" id="task" name="text">
-                <button type="submit" class="btn btn-outline-secondary add" id="add" name="add">Add Task - <span
-                            style="color: black"><b><?= $_SESSION['login'] ?></b></span></button>
+                <button type="submit" class="btn btn-outline-secondary add" id="add" name="add">Add Task - <span style="color: black"><b><?= $_SESSION['login'] ?></b></span></button>
             </div>
         </form>
 
-      <?php if (!empty($data)) : ?>
-          <table class="table caption-top">
-              <caption>List of tasks</caption>
-              <thead>
-              <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">Task</th>
-                  <th scope="col">Action</th>
-              </tr>
-              </thead>
-              <tbody>
-              <?php foreach ($data['tasks'] as $task) : ?>
-                  <tr>
-                      <th scope="row"><?= $task->getId(); ?></th>
-                      <td><?= $task->getText(); ?></td>
-                      <td><a href="#">Delete</a> | <a href="#">Edit</a></td>
-                  </tr>
-              <?php endforeach; ?>
-              </tbody>
-          </table>
-          <button type="button" class="btn btn-danger delete-all"><a href="#">Delete all tasks</a></button>
-      <?php endif; ?>
+        <?php if (!empty($data)) : ?>
+            <table class="table caption-top">
+                <caption>List of tasks</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Task</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($data['tasks'] as $task) : ?>
+                        <tr>
+                            <th scope="row"><?= $task->getId(); ?></th>
+                            <td><?= $task->getText(); ?></td>
+                            <td><a href="<?php print PATH; ?>/tasks?id=<?= $task->getId(); ?>">Delete</a> | <a href="#">Edit</a></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <button type="button" name="deleteAll" class="btn btn-danger delete-all"><a href="<?php print PATH; ?>/tasks?delete=all">Delete all tasks</a></button>
+        <?php endif; ?>
     </div>
     <div class="col-2"></div>
 </div>

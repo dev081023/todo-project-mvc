@@ -24,6 +24,21 @@ class TaskController extends AbstractController
       exit();
     }
 
+    if (!empty($_GET["id"])) {
+      $id = $_GET["id"];
+      $task = $taskRepository->find($id);
+      $em->remove($task);
+      $em->flush();
+    }
+
+    if (!empty($_GET["delete"])) {
+      $tasks = $taskRepository->findAll();
+      foreach ($tasks as $task) {
+        $em->remove($task);
+      }
+      $em->flush();
+    }
+
     $vars['tasks'] = $taskRepository->findBy($vars, ['id' => 'DESC']);
     $content = $this->viewTemplate('tasks', $vars);
     $title = 'Tasks List';
