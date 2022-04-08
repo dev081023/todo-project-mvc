@@ -14,7 +14,16 @@ class TaskController extends AbstractController
     $vars = [];
     $em = getEntityManager();
     $taskRepository = $em->getRepository(Task::class);
-//    $vars['tasks'] = $taskRepository->findAll();
+
+    if (!empty($_POST) && $_POST["text"] !== "") {
+      $text = $_POST["text"];
+      $task = new Task($text);
+      $em->persist($task);
+      $em->flush();
+      header("Location: " . PATH . "/tasks");
+      exit();
+    }
+
     $vars['tasks'] = $taskRepository->findBy($vars, ['id' => 'DESC']);
     $content = $this->viewTemplate('tasks', $vars);
     $title = 'Tasks List';

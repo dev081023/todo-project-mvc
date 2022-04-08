@@ -22,17 +22,6 @@ class Task
    */
   private ?string $text;
 
-//  /**
-//   * @ManyToOne(targetEntity="User")
-//   * @JoinColumn(name="user_id", referencedColumnName="id")
-//   */
-//  private ?int $userId;
-
-  /**
-   * @Column(type="datetime")
-   */
-  private  $created;
-
   public function __construct(string $text)
   {
     $this->text = $text;
@@ -54,13 +43,4 @@ class Task
     return $this->text;
   }
 
-//  public function getUserId(): ?int
-//  {
-//    return $this->userId;
-//  }
-
-  public function getCreated()
-  {
-    return $this->created;
-  }
 }

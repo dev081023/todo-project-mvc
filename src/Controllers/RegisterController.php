@@ -29,6 +29,7 @@ class RegisterController extends AbstractController
       $em->persist($user);
       $em->flush();
       header("Location: " . PATH . "/login");
+      exit();
     }
 
     $content = $this->viewTemplate('register');
