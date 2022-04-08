@@ -5,7 +5,6 @@ namespace App\Controllers;
 
 
 use App\Models\User;
-use function Symfony\Component\String\s;
 
 class RegisterController extends AbstractController
 {
@@ -15,6 +14,15 @@ class RegisterController extends AbstractController
     if (!empty($_POST)) {
       $login = trim(stripcslashes(htmlspecialchars($_POST['login'])));
       $password = $_POST['password'];
+
+//      if ($this->loginCheck($login)) {
+//        header("Location: " . PATH . "/register");
+//        echo 'NO';
+//        exit();
+//      } else {
+//        echo "OK!";
+//        exit();
+//      }
 
       $em = getEntityManager();
       $user = new User($login, $password);
@@ -28,9 +36,11 @@ class RegisterController extends AbstractController
     return $this->viewWrapper($title, $content);
   }
 
-  public function loginCheck()
+  public function loginCheck($login)
   {
     $em = getEntityManager();
-    $result = $em->createQuery('SELECT COUNT(*) as COUNT FROM `users` WHERE `login` = ? OR `email` = ?');
+    //    $query = "SELECT COUNT(*) as COUNT FROM `users` WHERE `login` = '" . $login . "'";
+//    return $em->createQuery($query)->execute();
+    return $em->createQueryBuilder()->select('count(*)')->from('users', 'u')->where("u.login = $login");
   }
 }

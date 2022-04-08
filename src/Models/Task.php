@@ -22,16 +22,16 @@ class Task
    */
   private ?string $text;
 
-  /**
-   * @ManyToOne(targetEntity="User")
-   * @JoinColumn(name="user_id", referencedColumnName="id")
-   */
-  private ?int $userId;
+//  /**
+//   * @ManyToOne(targetEntity="User")
+//   * @JoinColumn(name="user_id", referencedColumnName="id")
+//   */
+//  private ?int $userId;
 
   /**
    * @Column(type="datetime")
    */
-  private $created;
+  private  $created;
 
   public function __construct(string $text)
   {
@@ -54,10 +54,10 @@ class Task
     return $this->text;
   }
 
-  public function getUserId(): ?int
-  {
-    return $this->userId;
-  }
+//  public function getUserId(): ?int
+//  {
+//    return $this->userId;
+//  }
 
   public function getCreated()
   {

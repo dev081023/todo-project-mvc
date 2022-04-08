@@ -31,7 +31,7 @@ if (empty($_SESSION['login'])) {
               <tr>
                   <th scope="col">ID</th>
                   <th scope="col">Task</th>
-                  <th scope="col">Date</th>
+<!--                  <th scope="col">Date</th>-->
                   <th scope="col">Action</th>
               </tr>
               </thead>
@@ -40,7 +40,7 @@ if (empty($_SESSION['login'])) {
                   <tr>
                       <th scope="row"><?= $task->getId(); ?></th>
                       <td><?= $task->getText(); ?></td>
-                      <td><?= $task->getCreated(); ?></td>
+<!--                      <td>--><?//= $task->getCreated(); ?><!--</td>-->
                       <td><a href="#">Delete</a> | <a href="#">Edit</a></td>
                   </tr>
               <?php endforeach; ?>
